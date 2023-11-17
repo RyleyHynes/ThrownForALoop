@@ -111,6 +111,8 @@ void ViewProductDetails()
         {
             int response = int.Parse(Console.ReadLine()!.Trim());
             chosenProduct = products[response - 1];
+            Console.WriteLine($"You selected: {chosenProduct.Name}");
+            Console.WriteLine($"Price: {chosenProduct.Price}, Sold: {chosenProduct.Sold}, Stock Date: {chosenProduct.StockDate}, Condition: {chosenProduct.Condition}")
         }
         catch (FormatException)
         {
@@ -133,6 +135,7 @@ void ListProducts()
     decimal totalValue = 0.0M;
     foreach (Product product in products)
     {
+        Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Sold: {product.Sold}, Stock Date: {product.StockDate}, Condition: {product.Condition} ")
         if (!product.Sold)
         {
             totalValue += product.Price;
